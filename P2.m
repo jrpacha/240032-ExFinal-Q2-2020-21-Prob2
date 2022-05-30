@@ -33,7 +33,7 @@ nodsInnerB = find(abs(nodes(:,1)-10) < 4.001 & abs(nodes(:,2)-6) < 0.001);
 nodsInnerT = find(abs(nodes(:,1)-10) < 4.001 & abs(nodes(:,2)-14) < 0.001);
 
 nodsInner = unique([nodsInnerL; nodsInnerR; nodsInnerB; nodsInnerT]); 
-plotElements(nodes,elem,numbering);
+plotElementsOld(nodes,elem,numbering);
 hold on
 plot(nodes(nodsInner,1),nodes(nodsInner,2),'o','markerFaceColor','red','markerSize',10);
 plot(nodes(nodsOuter,1),nodes(nodsOuter,2),'o','markerFaceColor','green','markerSize',10);
@@ -69,7 +69,6 @@ end % end for elements
 % for the postprocess step
 Kini=K;
 Fini=F;
-
 
 fixedNods = nodsInner;
 freeNods = setdiff(1:numNod,fixedNods);
