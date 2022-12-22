@@ -98,6 +98,11 @@ u(freeNods) = um;
 %Post process
 QAfterPostP = Kini*u-Fini;
 
+%Contour plot
+title = 'Contour plot of the temperature';
+colorScale = 'jet';
+plotContourSolution(nodes,elem,u,title,colorScale)
+
 q = [xp, 10;
     20-xp,10;
     10,xp;
@@ -131,6 +136,3 @@ fprintf('(c) max(u(j)) - min(u(j)) = %.5e\n',...
     max(interpTemp)-min(interpTemp));
 fprintf('    Check. The interpolated temperature u(1) at q(1) is %.5e\n',...
     interpTemp(1))
-
-
-
